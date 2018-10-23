@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Invoice Exercise</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<style>
+	h3 {
+		color: gray;
+		margin-left: 20px;
+	}
+
+	button {
+		padding: 5px;
+		font-size: 14px;
+		background: blueviolet;
+		border-radius: 10px;
+		color: whitesmoke;
+	}
+
+	#hidden {
+		display: none;
+		margin-top: 40px;
+	}
+
+	#table1,td,tr {
+       border: 2px solid gray;
+	}
+	</style>
+</head>
+<body>
+	<h3><u>Start entering details to generate an invoice</u></h3>
+
+	<div>
+		<label style=" margin-left: 20px;">Country</label>
+		<select id="country">
+			<option>US</option>
+			<option>Japan</option>
+			<option>Saudi Riyal</option>
+			<option>South African Rand</option>
+			<option>Mexican Peso</option>
+		</select>
+	</div>
+
+	<div style="height:20px;"></div>
+
+	<table>
+		<tr>
+			<th>Part Number</th>
+			<th>Part description</th>
+			<th>Quantity</th>
+			<th>Price per item</th>
+			<th>Discount %</th>
+			
+		</tr>
+		<tr>
+			<td><input type="number" name="partno" id="partno"></td>
+			<td><input type="text" name="desc" id="name"></td>
+			<td><input type="number" name="quantity" id="qt"></td>
+			<!--Change this to decimal-->
+			<td><input type="text" name="price" id="price"></td>
+			<!--Is this a yes/no field or number field-->
+			<td><input type="number" name="discount" id="disc" max="100"></td>
+		</tr>
+		<tr id="blank">
+	</table>
+
+	<button id="add">Add item</button>
+	<button id="finish">Finish</button>
+
+
+	<div id="hidden">
+      <h3><u> Generated Invoice </u></h3>
+			<table id="table1">
+					<tr>
+						<th>Part Number</th>
+						<th>Part description</th>
+						<th>Quantity</th>
+						<th>Price per item</th>
+						<th>Discount %</th>
+						<th>Tax</th>
+						<th>Total</th>
+					</tr>
+					<tbody id="invoicegen">
+
+					</tbody>
+					<tfoot id="tfoot">
+
+					</tfoot>
+			</table>
+	</div>
+	<script src="invoice.js"></script>
+
+</body>
+</html>

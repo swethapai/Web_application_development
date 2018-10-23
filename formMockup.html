@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Form Mock Up</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+  	
+  	function onSubmit () {
+       var bday = document.getElementById("bdate").value;
+       var dateEntered = new Date(bday);
+       var input = dateEntered.getTime();
+       var inputyear = dateEntered.getYear();
+       
+       var today = new Date();
+       var thisday = today.getTime();
+       var thisYear = today.getYear();
+
+       var leapyears = parseInt(thisYear,10)-parseInt(inputyear,10);
+       var extradays = Math.floor(leapyears/4);
+       
+       var diff = parseInt(thisday,10)-parseInt(input,10);
+       diff = diff/(1000*60*60*24*365);
+       diff = diff-(extradays*0.002738);
+
+       if (parseFloat(diff,10)>=18) {
+        window.open("http://boomchugalug.com");
+       }
+
+       else {
+        window.open("https://www.disney.com");
+       }
+
+  	}
+  </script>
+
+    <style>
+    	#bdate {
+    		height: 40px;
+    		width: 240px;
+    		font-size: 24px;
+    	}
+
+    	#div1 {
+    		margin: 300px;
+    	}
+
+        .btn {
+        	font-size: 20px;
+        	height: 40px;
+        	width: 150px;
+        	background-color: blue;
+        	color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+	<div class="empty"></div>
+
+	<div class="container" id="div1">
+
+	<label style="font-size: 24px;">Please enter your birth date</label>
+
+	<form class="form-inline">
+
+		<input type="date" name="bday" class="form-control" id="bdate"><br><br>
+
+		<button class="btn" onclick="onSubmit()">Enter</button>
+		
+	</form>
+	</div>
+</body>
+</html>

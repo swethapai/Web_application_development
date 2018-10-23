@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Address Form</title>
+
+	<meta charset="utf-8">
+
+	<style>
+		.formclass {
+			height: 100vh;
+			margin: 300px;
+		}
+
+		.intn {
+			padding: 30px;
+			margin: 30px;
+		}
+
+		.blue {
+			color: steelblue;
+		}
+
+
+	</style>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+    	function foreignAddress() {
+    		var addr = document.getElementById("international");
+    		var checked = "on";
+    		
+    		if(document.getElementById("international").checked) {
+    			
+    			document.getElementById("province").style.display = 'inline';
+    			document.getElementById("locale").style.display = 'inline';
+    			document.getElementById("region").style.display = 'inline';
+    			document.getElementById("state").style.display = 'none';
+
+    		}
+
+    			if(!document.getElementById("international").checked) {
+    			
+    			document.getElementById("province").style.display = 'none';
+    			document.getElementById("locale").style.display = 'none';
+    			document.getElementById("region").style.display = 'none';
+    			document.getElementById("state").style.display = 'inline';
+
+    		}
+
+
+    	}
+    </script>
+
+</head>
+<body>
+
+	<!--Material UI part
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <div id="root"></div>
+        <script src="address.js"></script>
+
+        End-->
+
+	<div class="formclass">
+		<h2 class="blue">Please fill in your address below</h2>
+
+		<br>
+
+		<input type="checkbox" name="foreign" class="intn" id="international" oninput="foreignAddress()"> <label style="font-size: 18px"> &nbsp;Foreign Address</label>
+
+	<form method="get" class="form-inline">
+		<!--<label style="font-size: 18px">Address:</label>-->
+		<input type="text" name="addr1" placeholder="Street" class="form-control">
+		<input type="text" name="apt" placeholder="Apartment or Suite" class="form-control">
+		<input type="text" name="city" placeholder="City" class="form-control">
+
+        <span >
+		<select id="state" class="form-control">
+			<option disabled selected>State</option>
+			<option>Massachusetts</option>
+			<option>Arizona</option>
+			<option>Texas</option>
+			<option>California</option>
+			<option>Florida</option>
+			<option>Alaska</option>
+			<option>Georgia</option>
+			<option>Pennsylvania</option>
+		</select></span>
+
+		<input type="text" pattern="\d*" maxlength="4" name="zip" placeholder="Zip Code" class="form-control">
+
+		<input type="text" name="province" placeholder="Province" id="province" class="form-control" style="display: none;">
+
+		<input type="text" name="locale" placeholder="Locale" id="locale" class="form-control" style="display: none;">
+
+		<input type="text" name="region" placeholder="Region" id="region" class="form-control" style="display: none;">
+
+		<button class="btn btn-primary">Submit</button>
+
+	</form>
+
+
+		</div>
+
+
+</body>
+</html>

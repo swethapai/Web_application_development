@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Selectors</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script>
+    $(document).ready(function(){
+    
+    $("button").click(function(){
+        
+        //Elelment selector
+        $number_h3 = $("h3").length;
+        //Attribute selector
+        $number_idSelectors = $("p[id],h3[id],span[id]").length;
+        //Element selector
+	    $number_paragraphs = $("p").length;
+	    //Attribute selector
+	    $number_class = $("p[class],h3[class],span[class]").length;
+	    //Element selector
+	    $number_span=$("span").length;
+	    //Attribute selector
+	    $number_attr = $("[style]").length;
+	    //Direct descendant selector
+	    $number_dd = $("p > span").length;
+
+	    $number_dd = $number_dd + $("h3 > span, h3 > p").length;
+	    //Descendant selector 
+	    $number_des = $("p span").length;
+	    //Adjacency selector 
+	    $number_adj = $("p + span").length;
+
+
+        //Example of ID selector and class selector 
+        $("#h").text($number_h3);
+	    $("#p").text($number_paragraphs);
+	    $("#s").text($number_span);
+	    $("#class").text($number_class);
+	    $("#ids").text($number_idSelectors);
+	    $("#att").text($number_attr);
+	    $(".dd").text($number_dd);
+	    $(".ds").text($number_des);
+	    $(".ad").text($number_adj);
+
+
+    });
+});
+</script>
+
+<style>
+	
+	button {
+		padding: 5px;
+		font-size: 16px;
+		background: #b3b3ff;
+	}
+
+	.addGap {
+		padding: 10px;
+	}
+
+	table,tr,td {
+		border: 2px solid #b3b3ff;
+	}
+</style>
+
+
+</head>
+<body>
+
+	<h3 style="text-align: center;"> This is the first h3 </h3>
+	
+	<p class="classSelector"> Paragraph 1 </p>
+
+	<p> Paragraph 2
+		<span id="idSelector1">Span 1(Direct descendant of p)</span>
+	</p>
+
+    <p> Paragraph 3</p>
+	<p> Paragraph 4 </p>
+	<p> Paragraph 5 
+	<span>Span 2 is a direct descendant of p</span>
+	<span>Span 3 is not a direct descendant of p</span>
+	</p>
+
+	<h3>This is the second h3
+	<span class="classSelector">Span 4 is a direct descendant of h3</span>
+    </h3>
+
+
+	<p id="idSelector2"> Paragraph 6 </p>
+	<p> Paragraph 7 </p>
+	<p class="classSelector"> Paragraph 8 </p>
+	<p> Paragraph 9 </p>
+	<p> Paragraph 10 </p>
+	<p id="idSelector3"> Paragraph 11 </p>
+	<p> Paragraph 12 </p>
+	<p> Paragraph 13 </p>
+
+
+	<p> Paragraph 14 </p>
+    <span>Span 5(Adjacent to para 15)</span>
+
+	
+	<span>Span 6</span>
+	<span class="classSelector">Span 7</span>
+	<span>Span 8</span>
+	<span id="idSelector4">Span 9</span>
+
+	<h3>This is the third h3
+	<p id="idSelector5"> Paragraph 15 is direct descendant of h3
+    <span>Span 10(Descendant of para 10)</span>
+    <span>Span 11(Descendant of para 10)</span>
+	</p>
+    <span>Span 12(Direct descendant of h3, Adjacent to p)</span>
+    </h3>
+
+	<div class="addGap"></div>
+
+	<button>Click the button to get counts</button>
+
+	<div class="addGap"></div>
+
+	<footer>
+		<table>
+
+			<tr>
+				<td>Headers</td>
+				<td id="h"></td>
+			</tr>
+
+			<tr>
+				<td>Paragraphs</td>
+				<td id="p"></td>
+			</tr>
+
+            <tr>
+				<td>Spans</td>
+				<td id="s"></td>
+			</tr>
+
+			<tr>
+				<td>Elements with class attribute</td>
+				<td id="class"></td>
+			</tr>
+
+			<tr>
+				<td>Elements with ID attribute</td>
+				<td id="ids"></td>
+			</tr>
+
+			<tr>
+				<td>Attribute selector</td>
+				<td id="att"></td>
+			</tr>
+            
+            <tr>
+				<td>Direct descendant selector</td>
+				<td class="dd"></td>
+			</tr>
+
+			 <tr>
+				<td>Descendant selector(p span)</td>
+				<td class="ds"></td>
+			</tr>
+
+			 <tr>
+				<td>Adjacency selector</td>
+				<td class="ad"></td>
+			</tr>
+
+		</table>
+		
+	</footer>
+
+
+</body>
+</html>
