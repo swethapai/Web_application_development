@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Greeter</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <style>
+        #numEntered {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #addVal, #getAvg, #reset {
+            padding: 5px;
+            font-size: 16px;
+            color: whitesmoke;
+        }
+
+        #addVal {
+            background: #3366ff;
+        }
+
+        #getAvg {
+            background: #ff6666;
+        }
+
+        #reset {
+            background: #8a00e6;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <h3>Start entering numbers to calculate the average</h3>
+        <input type="number" id="numEntered"/>
+        <button id="addVal">Add value</button>
+        <button id="getAvg">Get Average</button>
+        <button id="reset">Reset</button>
+        <p></p>
+        <script src="greeter.js"></script>
+    </body>
+</html>

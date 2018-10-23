@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diet Minder</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+	<style>
+		#hiddenfield {
+			display: none;
+			margin-top: 100dp;
+		}
+
+		#edit {
+			display: none;
+		}
+
+		button {
+		padding: 5px;
+		font-size: 14px;
+		background: blueviolet;
+		border-radius: 10px;
+		color: whitesmoke;
+	}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+	<div style="height:50px"></div>
+    <h2>Diet Minder</h2>
+
+    <label>Select the date</label>
+	<input type="date" name="day" id="date">
+	<br>
+	<input type="text" name="dish" placeholder="Food" id="food">
+	<input type="number" name="cals" placeholder="Calories" id="cals">
+	<br><br>
+	<button id="add"> Add entry </button>
+	<button id="edit"> Edit </button>
+	
+	<div style="height:50px"></div>
+
+	<div id="hiddenfield">
+		<h2>List of all entries</h2>
+		<ol id="ul">
+		</ol>
+		<h6></h6>
+		<button id="editentry"> Edit an entry </button>
+		<button id="delete"> Delete an entry </button>
+		<button id="sum"> Sum up calories </button>
+		
+	</div>
+	</div>
+
+	<script src="dietminder.js"></script>
+
+</body>
+</html>
